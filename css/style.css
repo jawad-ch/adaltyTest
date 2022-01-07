@@ -82,13 +82,15 @@ header {
 header .toggle-icon {
   cursor: pointer;
   position: absolute;
-  right: 40px;
+  right: 30px;
   font-size: 2rem;
   z-index: 12;
+  transition: all 0.5s ease-in-out;
 }
 
 body.menuOpen header .toggle-icon {
   color: white;
+  top: 10px;
   position: fixed;
 }
 body.menuOpen header .toggle-icon #menu {
@@ -315,62 +317,51 @@ main {
 }
 
 .hero-right {
-  background-image: url(../img/img1.png);
+  background-image: url(../img/hero-right.png);
   background-repeat: no-repeat;
-  background-position: 90% 100%;
-  background-color: var(--blue-color);
+  background-size: cover;
+  background-position: 100% 100%;
   position: relative;
-}
-
-.hero-right::before {
-  content: "";
-  position: absolute;
-  background-color: var(--blue-color);
-  width: 230px;
-  height: 100%;
-  right: 6%;
-  opacity: 0.45;
 }
 
 /* partners section */
 
 .partners {
-  margin-top: 15px;
   display: flex;
-  height: 400px;
-}
-
-.partners .partners-ambitions {
-  display: flex;
+  height: 90vh;
   background-image: url(../img/partners.png);
   background-repeat: no-repeat;
   position: relative;
-  background-position: -90% 100%;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 60px;
 }
 
-.partners .partners-ambitions .us {
+.partners .partners-ambitions .we {
   font-size: small;
   width: 50%;
-  position: absolute;
-  left: 20%;
-  top: 10%;
-  right: 50%;
   color: var(--green-color);
+  padding-left: 150px;
+  padding-top: 40px;
 }
 
+.partners .partners-ambitions {
+  width: 50%;
+  display: flex;
+}
 .partners .partners-ambitions .ambitions {
   font-size: 40px;
-  padding: 20px 0 0 350px;
   position: relative;
+  display: flex;
 }
 .partners .partners-ambitions .ambitions:after {
   content: "";
   position: absolute;
   width: 100px;
   height: 1.5px;
-  left: 50%;
+  left: 0;
   bottom: 50%;
-  /* border-radius: 30px; */
+  border-radius: 30px;
   background-color: var(--black-color);
 }
 .partners .partners-ambitions,
@@ -539,24 +530,19 @@ main {
 .services {
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
   padding: 100px 0;
 }
 
 /* service caption */
 .services .services-caption {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  width: 55%;
   margin: auto;
 }
 
 .services .services-caption .services-head {
   font-size: 2rem;
-  margin-right: 10px;
-  width: 30%;
-}
-.services .services-caption .services-head span {
   letter-spacing: 1px;
   margin-bottom: 6px;
   display: inline-flex;
@@ -567,14 +553,22 @@ main {
 }
 
 .services .services-caption .services-desc {
-  margin-left: 20px;
-  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
 }
 
+.services .services-caption .services-desc .larg-desc {
+  font-size: 2rem;
+  width: 100%;
+}
+.services .services-caption .services-desc .small-desc {
+  width: 100%;
+  margin-left: 15%;
+}
 .services .services-caption .services-desc p {
   line-height: 25px;
   letter-spacing: 1px;
-  margin-top: 50px;
   font-size: 15px;
   margin-bottom: 25px;
 }
@@ -997,7 +991,7 @@ main {
 }
 
 @media only screen and (max-width: 1200px) {
-  aside.open {
+  body.menuOpen aside {
     width: 40%;
   }
 }
