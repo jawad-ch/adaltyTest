@@ -84,8 +84,13 @@ header .toggle-icon {
   position: absolute;
   right: 40px;
   font-size: 2rem;
+  z-index: 12;
 }
 
+body.menuOpen header .toggle-icon {
+  color: white;
+  position: fixed;
+}
 body.menuOpen header .toggle-icon #menu {
   display: none;
 }
@@ -131,6 +136,58 @@ header .bottom-header nav {
 
 header .bottom-header ul li {
   font-size: small;
+}
+
+/* aside */
+
+aside {
+  width: 0px;
+  padding: 0;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 11;
+  background-color: var(--green-color);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+aside ul {
+  width: 100%;
+}
+aside li a {
+  color: white;
+  position: relative;
+}
+aside li a::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  background-color: var(--blue-color);
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  transition: all 0.5s ease-in-out;
+}
+
+aside li a:hover::after {
+  content: "";
+  width: 100%;
+}
+
+aside li {
+  color: white;
+  /* border: 1px solid red; */
+  display: flex;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: start;
+  padding-left: 25%;
 }
 
 /* main */
@@ -927,6 +984,12 @@ main {
 @media only screen and (min-width: 768px) {
   .hero .quot p {
     width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  aside.open {
+    width: 40%;
   }
 }
 
