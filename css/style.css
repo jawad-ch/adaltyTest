@@ -601,6 +601,9 @@ main {
   position: relative;
 }
 
+.services .services-grid .service {
+  cursor: pointer;
+}
 .services .services-grid .service::before {
   content: "";
   z-index: -1;
@@ -608,12 +611,18 @@ main {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  transition: all 0.5s ease-in-out;
   background-color: var(--blue-color);
 }
 
+.services .services-grid .service:hover::before,
+.services .services-grid .service:hover .icon {
+  transform: translateY(-10px);
+}
 .services .services-grid .service .icon {
   width: 60px;
   height: 60px;
+  transition: all 0.5s ease-in-out;
 }
 .services .services-grid .service .title {
   line-height: 25px;
