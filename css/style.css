@@ -199,7 +199,8 @@ main {
 /* hero section */
 
 .hero {
-  height: 100vh;
+  height: 100%;
+  display: block;
 }
 
 .hero .quot {
