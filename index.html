@@ -11,8 +11,12 @@
     />
     <title>ADALTYS-test</title>
   </head>
-  <body>
+  <body class="menuClosed">
     <header>
+      <div class="toggle-icon">
+        <i id="menu" class="fas fa-bars"></i>
+        <i id="closeMenu" class="fas fa-times"></i>
+      </div>
       <div class="top-header">
         <nav>
           <img src="img/logo.png" alt="" class="logo" />
@@ -21,7 +25,7 @@
               <a href="#">À propos</a>
             </li>
             <li>
-              <a href="#">Équip</a>
+              <a href="#">Équipe</a>
             </li>
             <li>
               <a href="#">Expertises</a>
@@ -63,7 +67,7 @@
     <main>
       <section class="hero">
         <div class="quot">
-          <p>Une approach hybride du droit de affaires public et privé</p>
+          <p>Une approache hybride du droit de affaires public et privé</p>
           <span class="btn">
             <button>En savoir plus</button>
           </span>
@@ -160,7 +164,6 @@
           </div>
         </div>
       </section>
-
       <section class="services">
         <div class="services-caption">
           <div class="services-head">
@@ -224,6 +227,106 @@
             <div class="title">Compliance - regulatory</div>
           </div>
         </div>
+      </section>
+      <section class="made">
+        <div class="circles">
+          <div class="circle-1"></div>
+          <div class="circle-2"></div>
+        </div>
+        <div class="dotes">
+          <img src="./img/dotes.png" alt="dotes" />
+        </div>
+        <div class="made-in">Made in France</div>
+        <div class="made-by">
+          <small class="btn"
+            >Nos implantations <i class="fas fa-arrow-right"></i
+          ></small>
+          <div class="adaltys">
+            <span class="by">by</span>
+            <img src="./img/byadaltys.png" alt="adaltysl" />
+          </div>
+        </div>
+      </section>
+      <section class="trends">
+        <div class="trends-circles">
+          <div class="dotted-circle"></div>
+          <div class="solid-circle"></div>
+        </div>
+        <img src="./img/luiv.png" alt="luiv" class="y-img" />
+        <div class="trends-left">
+          <small>Blog</small>
+          <p>Identifier et anticiper les tendances de demain</p>
+          <button class="btn">
+            Afficher toutes les actualités <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="articals">
+          <article class="artical">
+            <img src="./img/img0.png" alt="" class="artical-img" />
+            <div class="artical-details">
+              <div class="artical-title">
+                Nouvelle date et replay - Webinaire report des élections
+                municipales
+              </div>
+              <small class="artical-bottom">
+                <div class="covid">Covid-19</div>
+                <i class="fas fa-circle"></i>
+                <div class="date">Publié le 08/06/2020</div>
+              </small>
+            </div>
+          </article>
+          <article class="artical">
+            <img src="./img/img2.png" alt="" class="artical-img" />
+            <div class="artical-details">
+              <div class="artical-title">
+                Webinaire - Les fondamentaux de l'intercommunalité
+              </div>
+              <small class="artical-bottom">
+                <div class="covid">Covid-19</div>
+                <i class="fas fa-circle"></i>
+                <div class="date">Publié le 04/05/2020</div>
+              </small>
+            </div>
+          </article>
+          <article class="artical">
+            <img src="./img/img3.png" alt="" class="artical-img" />
+            <div class="artical-details">
+              <div class="artical-title">
+                Webinaire : Mon contrat est-il vraiment signé ?
+              </div>
+              <small class="artical-bottom">
+                <div class="covid">Covid-19</div>
+                <i class="fas fa-circle"></i>
+                <div class="date">Publié le 04/05/2020</div>
+              </small>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="spreader"></section>
+      <section class="subscribe">
+        <div class="circles">
+          <div class="big-circle"></div>
+          <div class="small-circle"></div>
+        </div>
+        <p>Souscrivez à notre newsletter pour être informé de nos actualités</p>
+        <form>
+          <div class="form-control">
+            <input type="text" placeholder="Nom et prénom" />
+          </div>
+          <div class="form-control">
+            <input type="email" placeholder="Address mail" />
+          </div>
+          <div class="form-control">
+            <input type="radio" id="RGPD" name="RGPD" value="RGPD" />
+            <label for="RGPD">RGPD</label>
+          </div>
+          <div class="form-control">
+            <button class="btn">
+              S'abonner <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
       </section>
     </main>
 
