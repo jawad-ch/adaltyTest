@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Oswald:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
 /* resets */
 
 * {
@@ -18,6 +19,7 @@ textarea {
   all: unset;
 }
 
+/* variable */
 :root {
   --black-color: #1d1d1b;
   --grey-color: #dbdbdb;
@@ -1107,15 +1109,16 @@ main {
 
   .made .made-by {
     margin-top: 10px;
-    width: 100%;
+    width: 90%;
   }
 
   .made .made-by small {
     padding: unset;
+    font-size: 10px;
     margin: unset;
   }
   .made .made-by img {
-    width: 220px;
+    width: 190px;
   }
 }
 
