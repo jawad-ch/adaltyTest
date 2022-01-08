@@ -262,9 +262,10 @@ main {
 .hero-left-right {
   margin-top: 60px;
   display: flex;
-  /* flex-direction: column; */
+  /* flex-direction: row; */
   justify-content: center;
 }
+
 .hero-left,
 .hero-right {
   display: flex;
@@ -275,6 +276,7 @@ main {
   height: 350px;
   color: white;
 }
+
 .hero-left p,
 .hero-right p {
   font-weight: 700;
@@ -329,32 +331,38 @@ main {
 
 .partners {
   display: flex;
-  height: 90vh;
-  background-image: url(../img/partners.png);
-  background-repeat: no-repeat;
+  height: 100%;
   position: relative;
-  background-position: center center;
-  background-size: cover;
-  padding-top: 60px;
+  padding: 115px 0;
 }
 
-.partners .partners-ambitions .we {
-  font-size: small;
-  width: 50%;
-  color: var(--green-color);
-  padding-left: 150px;
-  padding-top: 40px;
+.partners .circle {
+  top: 33%;
+  left: -115px;
+  border-radius: 50%;
+  z-index: -1;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: var(--blue-color);
+}
+
+.partners .circle::after {
+  content: "";
+  top: -50%;
+  left: -50%;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  border: 1.5px solid var(--pink-color);
 }
 
 .partners .partners-ambitions {
   width: 50%;
   display: flex;
 }
-.partners .partners-ambitions .ambitions {
-  font-size: 40px;
-  position: relative;
-  display: flex;
-}
+
 .partners .partners-ambitions .ambitions:after {
   content: "";
   position: absolute;
@@ -373,6 +381,7 @@ main {
 .partners .partners-desc p {
   line-height: 25px;
   font-size: 1rem;
+  font-weight: 500;
   width: 60%;
 }
 
@@ -401,7 +410,7 @@ main {
 .numbers {
   width: 100%;
   /* padding: 100px 0; */
-  height: 100vh;
+  height: 100%;
   display: flex;
   background-color: var(--black-color);
 }
@@ -949,38 +958,179 @@ main {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  /* header */
+
   header .top-header ul,
   header .bottom-header ul {
     display: none;
   }
-  .hero .quot {
-    flex-direction: column;
-    align-items: center;
-    width: 98%;
+
+  /* main */
+
+  main {
+    margin-top: 40px;
   }
 
+  /* hero */
+
   .hero .quot p {
-    width: 90%;
+    width: 100%;
+    font-size: 1.9rem;
+  }
+
+  .hero .quot {
+    padding: 0 5%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
   }
 
   .hero .quot::after {
     display: none;
+  }
+
+  .hero-left-right {
+    flex-direction: column;
+  }
+
+  .hero-left,
+  .hero-right {
+    padding: 50px 40px 50px 50px;
+  }
+
+  .hero-left,
+  .hero-right,
+  .hero-left p,
+  .hero-right p {
+    width: 100%;
+    /* height: 350px; */
+  }
+
+  /* partners */
+
+  .partners {
+    padding: 115px 20px;
+  }
+  .partners .partners-ambitions {
+    margin-bottom: 10px;
+  }
+
+  .partners .partners-ambitions .we {
+    font-size: x-large;
+    color: var(--green-color);
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .partners .partners-ambitions .ambitions {
+    font-size: 30px;
+  }
+  .partners .partners-ambitions .ambitions::after {
+    display: none;
+  }
+
+  .partners,
+  .partners .partners-ambitions {
+    flex-direction: column;
+  }
+
+  .partners .partners-ambitions,
+  .partners .partners-desc {
+    width: 100%;
+  }
+
+  .partners .partners-desc p {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 35px;
+  }
+  /* numbers */
+  .numbers .numbers-left {
+    display: none;
+  }
+
+  .numbers .numbers-details {
+    width: 100%;
+  }
+
+  .numbers .numbers-details .box {
+    width: 100%;
+    height: unset;
+    padding: 0 100px;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  /* header */
   header .top-header ul,
   header .bottom-header ul {
     display: none;
   }
-  .hero .quot {
-    flex-direction: column;
-    align-items: center;
+  /* hero */
+  .hero .quot p {
+    width: 70%;
+    font-size: 1.9rem;
   }
 
   .hero .quot::after {
     display: none;
+  }
+
+  .hero-left-right {
+    flex-direction: column;
+  }
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    height: 350px;
+  }
+
+  /* partners */
+
+  .partners {
+    padding: 115px 100px;
+  }
+  .partners .partners-ambitions {
+    margin-bottom: 10px;
+  }
+
+  .partners .partners-ambitions .we {
+    font-size: x-large;
+    color: var(--green-color);
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .partners .partners-ambitions .ambitions {
+    font-size: 30px;
+  }
+  .partners .partners-ambitions .ambitions::after {
+    display: none;
+  }
+
+  .partners,
+  .partners .partners-ambitions {
+    flex-direction: column;
+  }
+
+  .partners .partners-ambitions,
+  .partners .partners-desc {
+    width: 100%;
+  }
+
+  .partners .partners-desc p {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 35px;
+  }
+
+  /* numbers */
+  .numbers .numbers-left {
+    display: none;
+  }
+  .numbers .numbers-details {
+    width: 100%;
   }
 }
 
@@ -988,6 +1138,76 @@ main {
 @media only screen and (min-width: 768px) {
   .hero .quot p {
     width: 60%;
+  }
+  .hero-left-right {
+    flex-direction: column;
+  }
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    height: 350px;
+  }
+
+  /* partners */
+
+  .partners {
+    padding: 115px 200px;
+  }
+  .partners .partners-ambitions {
+    margin-bottom: 10px;
+  }
+
+  .partners .partners-ambitions .we {
+    font-size: x-large;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .partners .partners-ambitions .ambitions {
+    font-size: 30px;
+  }
+  .partners .partners-ambitions .ambitions::after {
+    display: none;
+  }
+
+  .partners,
+  .partners .partners-ambitions {
+    flex-direction: column;
+  }
+
+  .partners .partners-ambitions,
+  .partners .partners-desc {
+    width: 100%;
+  }
+
+  .partners .partners-desc p {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 35px;
+  }
+
+  /* numbers */
+  .numbers .numbers-details {
+    width: 80%;
+  }
+  .numbers .numbers-left {
+    width: 20%;
+    display: flex;
+  }
+
+  .numbers .numbers-left p {
+    top: 6%;
+    left: 20%;
+  }
+
+  .numbers .numbers-left .shapes .dotes {
+    bottom: 0;
+    left: 0;
+  }
+
+  .numbers .numbers-left .shapes .circle3 {
+    top: 15%;
+    left: 401%;
   }
 }
 
@@ -999,6 +1219,76 @@ main {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .hero-left-right {
+    flex-direction: row;
+  }
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    height: 350px;
+  }
+
+  /* partners */
+
+  .partners {
+    padding: 115px 20px;
+  }
+  .partners .partners-ambitions {
+    margin-bottom: 10px;
+  }
+
+  .partners .partners-ambitions .we {
+    font-size: small;
+    width: 50%;
+    color: var(--green-color);
+    padding-left: 110px;
+    padding-top: 40px;
+  }
+
+  .partners .partners-ambitions .ambitions {
+    font-size: 30px;
+    position: relative;
+    display: flex;
+  }
+
+  .partners .partners-ambitions .ambitions::after {
+    display: block;
+  }
+
+  .partners,
+  .partners .partners-ambitions {
+    flex-direction: row;
+  }
+
+  .partners .partners-ambitions,
+  .partners .partners-desc {
+    width: 50%;
+  }
+
+  .partners .partners-desc p {
+    width: 100%;
+    font-size: 1.1rem;
+    line-height: 35px;
+  }
+
+  /* numbers */
+
+  .numbers .numbers-details {
+    width: 70%;
+  }
+  .numbers .numbers-left {
+    width: 30%;
+    display: flex;
+  }
+  .numbers .numbers-left .shapes .circle3 {
+    top: 60%;
+    left: 65%;
+  }
+
+  .numbers .numbers-left .shapes .dotes {
+    bottom: 15%;
+    left: 27%;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -1016,5 +1306,56 @@ main {
   .hero .quot {
     flex-direction: row;
     justify-content: center;
+  }
+
+  /* partners */
+
+  .partners {
+    padding: 115px 20px;
+  }
+  .partners .partners-ambitions {
+    margin-bottom: 10px;
+  }
+
+  .partners .partners-ambitions .we {
+    font-size: small;
+    width: 50%;
+    color: var(--green-color);
+    padding-left: 150px;
+    padding-top: 40px;
+  }
+
+  .partners .partners-ambitions .ambitions {
+    font-size: 40px;
+    position: relative;
+    display: flex;
+  }
+
+  .partners .partners-ambitions .ambitions::after {
+    display: block;
+  }
+
+  .partners,
+  .partners .partners-ambitions {
+    flex-direction: row;
+  }
+
+  .partners .partners-ambitions,
+  .partners .partners-desc {
+    width: 100%;
+  }
+
+  .partners .partners-desc p {
+    width: 80%;
+    font-size: 1.1rem;
+    line-height: 35px;
+  }
+
+  /* numbers */
+  .numbers .numbers-details {
+    width: 50%;
+  }
+  .numbers .numbers-left {
+    width: 50%;
   }
 }
