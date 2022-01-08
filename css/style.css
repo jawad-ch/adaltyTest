@@ -1064,7 +1064,7 @@ main {
   }
 
   .numbers .numbers-details .box .num {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   /* services */
@@ -1193,6 +1193,10 @@ main {
   }
   .numbers .numbers-details {
     width: 100%;
+  }
+
+  .numbers .numbers-details .box .num {
+    font-size: 5rem;
   }
 
   /* services */
@@ -1333,6 +1337,10 @@ main {
     left: 10%;
   }
 
+  .numbers .numbers-details .box .num {
+    font-size: 5.5rem;
+  }
+
   /* made-in */
 
   .made {
@@ -1462,6 +1470,10 @@ main {
     left: 10%;
   }
 
+  .numbers .numbers-details .box .num {
+    font-size: 6rem;
+  }
+
   /* services */
 
   .services .services-caption {
@@ -1588,12 +1600,12 @@ main {
 
   /* numbers */
   .numbers .numbers-details {
-    width: 50%;
+    width: 60%;
   }
   .numbers .numbers-details .box {
     padding: 0 40px;
   }
   .numbers .numbers-left {
-    width: 50%;
+    width: 40%;
   }
 }
