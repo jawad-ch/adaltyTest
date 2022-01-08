@@ -1060,7 +1060,7 @@ main {
   .numbers .numbers-details .box {
     width: 100%;
     height: unset;
-    padding: 0 60px;
+    padding: 0 25px;
   }
 
   .numbers .numbers-details .box .num {
