@@ -63,6 +63,7 @@ button {
   background: transparent;
 }
 
+html,
 body {
   overflow-x: hidden;
 }
@@ -1057,6 +1058,10 @@ main {
     width: 100%;
     height: unset;
     padding: 0 100px;
+  }
+
+  .numbers .numbers-details .box .num {
+    font-size: 6rem;
   }
 }
 
