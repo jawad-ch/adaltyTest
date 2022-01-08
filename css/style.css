@@ -496,7 +496,8 @@ main {
 .numbers .numbers-details .box {
   color: white;
   width: 50%;
-  height: 50%;
+  /* height: 50%; */
+  padding: 10px;
 }
 .numbers .numbers-details .box .num {
   display: inline-flex;
@@ -1057,11 +1058,64 @@ main {
   .numbers .numbers-details .box {
     width: 100%;
     height: unset;
-    padding: 0 100px;
+    padding: 0 60px;
   }
 
   .numbers .numbers-details .box .num {
     font-size: 6rem;
+  }
+
+  /* services */
+
+  .services .services-caption {
+    width: 100%;
+    margin: unset;
+  }
+
+  .services .services-caption .services-head,
+  .services .services-caption .services-desc {
+    padding: 0 30px;
+  }
+
+  .services .services-caption .services-desc {
+    flex-direction: column;
+  }
+
+  .services .services-caption .services-desc .small-desc {
+    margin-left: unset;
+    margin-top: 10px;
+  }
+  .services .services-caption .services-desc .small-desc p {
+    font-size: 1.1rem;
+    line-height: 35px;
+  }
+
+  .services .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* made-in */
+
+  .made {
+    height: 70vh;
+  }
+
+  .made .made-in,
+  .made .made-by .adaltys span {
+    font-size: 2.5rem;
+  }
+
+  .made .made-by {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .made .made-by small {
+    padding: unset;
+    margin: unset;
+  }
+  .made .made-by img {
+    width: 220px;
   }
 }
 
@@ -1137,6 +1191,67 @@ main {
   .numbers .numbers-details {
     width: 100%;
   }
+
+  /* services */
+
+  .services .services-caption {
+    width: 100%;
+    margin: unset;
+  }
+
+  .services .services-caption .services-head,
+  .services .services-caption .services-desc {
+    padding: 0 30px;
+  }
+
+  .services .services-caption .services-desc {
+    flex-direction: column;
+  }
+
+  .services .services-caption .services-desc .small-desc {
+    margin-left: unset;
+    margin-top: 10px;
+  }
+  .services .services-caption .services-desc .small-desc p {
+    font-size: 1.1rem;
+    line-height: 35px;
+  }
+
+  .services .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* made-in */
+
+  .made {
+    height: 90vh;
+  }
+
+  .made .made-in {
+    width: 80%;
+  }
+  .made .made-in {
+    width: 100%;
+    justify-content: center;
+  }
+  .made .made-in,
+  .made .made-by .adaltys span {
+    font-size: 4.5rem;
+  }
+
+  .made .made-by {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .made .made-by small {
+    padding: unset;
+    margin: unset;
+  }
+  .made .made-by img {
+    width: 200px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -1211,14 +1326,49 @@ main {
   }
 
   .numbers .numbers-left .shapes .circle3 {
-    top: 15%;
-    left: 401%;
+    bottom: 15%;
+    left: 10%;
+  }
+
+  /* made-in */
+
+  .made {
+    height: 100vh;
+  }
+
+  .made .made-in {
+    width: 100%;
+  }
+  .made .made-in {
+    justify-content: center;
+  }
+  .made .made-in,
+  .made .made-by .adaltys span {
+    font-size: 5.5rem;
+  }
+
+  .made .made-by {
+    margin-top: 10px;
+    width: 65%;
+    justify-content: space-between;
+  }
+
+  .made .made-by small {
+    padding: unset;
+    margin: unset;
+  }
+  .made .made-by img {
+    width: 300px;
   }
 }
 
+/* special break point for menu in medium to small devices */
 @media only screen and (max-width: 1200px) {
   body.menuOpen aside {
     width: 40%;
+  }
+  body.menuOpen {
+    overflow-y: hidden;
   }
 }
 
@@ -1285,14 +1435,91 @@ main {
     width: 30%;
     display: flex;
   }
+
+  .numbers .numbers-left p {
+    top: 6%;
+    left: 15%;
+  }
+
+  .numbers .numbers-left .shapes .circle1 {
+    top: 20%;
+    left: 25%;
+  }
+  .numbers .numbers-left .shapes .circle2 {
+    bottom: 19%;
+    left: 18%;
+  }
   .numbers .numbers-left .shapes .circle3 {
     top: 60%;
-    left: 65%;
+    left: 60%;
   }
 
   .numbers .numbers-left .shapes .dotes {
-    bottom: 15%;
-    left: 27%;
+    bottom: 10%;
+    left: 10%;
+  }
+
+  /* services */
+
+  .services .services-caption {
+    width: 60%;
+    margin: auto;
+  }
+
+  .services .services-caption .services-head,
+  .services .services-caption .services-desc {
+    padding: unset;
+  }
+
+  .services .services-caption .services-desc {
+    flex-direction: row;
+  }
+
+  .services .services-caption .services-desc .larg-desc {
+    padding: 0 20px 0 0;
+  }
+  .services .services-caption .services-desc .small-desc {
+    margin-left: unset;
+    margin-top: 10px;
+  }
+  .services .services-caption .services-desc .small-desc p {
+    font-size: 1.1rem;
+    line-height: 35px;
+  }
+
+  .services .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* made-in */
+
+  .made {
+    height: 100vh;
+  }
+
+  .made .made-in {
+    width: 70%;
+  }
+  .made .made-in {
+    justify-content: flex-start;
+  }
+  .made .made-in,
+  .made .made-by .adaltys span {
+    font-size: 6rem;
+  }
+
+  .made .made-by {
+    margin-top: 10px;
+    width: 70%;
+    justify-content: flex-end;
+  }
+
+  .made .made-by small {
+    padding: 0 110px 0 0;
+    margin: unset;
+  }
+  .made .made-by img {
+    width: 300px;
   }
 }
 
@@ -1359,6 +1586,9 @@ main {
   /* numbers */
   .numbers .numbers-details {
     width: 50%;
+  }
+  .numbers .numbers-details .box {
+    padding: 0 40px;
   }
   .numbers .numbers-left {
     width: 50%;
