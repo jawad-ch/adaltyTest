@@ -728,6 +728,7 @@ main {
   position: absolute;
   left: 10%;
   z-index: -1;
+  width: 40%;
 }
 .trends .trends-left {
   width: 45%;
@@ -819,25 +820,6 @@ main {
 .trends .articals .artical .artical-details .artical-bottom i {
   font-size: small;
   margin: 0 15px;
-}
-
-.trends .trends-circles .dotted-circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 5px dotted var(--green-color);
-  position: absolute;
-  top: 10%;
-  left: 25%;
-}
-.trends .trends-circles .solid-circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: var(--brown-color);
-  position: absolute;
-  bottom: 0;
-  left: 17%;
 }
 
 /* spreader */
@@ -1127,6 +1109,7 @@ main {
   /* trends */
 
   .trends {
+    margin-top: unset;
     padding: 10% 5%;
     flex-direction: column;
   }
@@ -1163,6 +1146,36 @@ main {
 
   .trends .articals .artical .artical-details .artical-bottom {
     font-size: 9px;
+  }
+
+  .trends .y-img {
+    width: 100%;
+    left: -4%;
+    top: 0;
+  }
+
+  /* .subscribe */
+
+  .subscribe {
+    flex-direction: column;
+    padding: 100px 20px;
+  }
+  .subscribe .circles .small-circle {
+    right: -25px;
+    bottom: 70px;
+    left: unset;
+  }
+  .subscribe p::after {
+    display: none;
+  }
+  .subscribe p {
+    width: 100%;
+    z-index: 2;
+  }
+
+  .subscribe form {
+    margin-top: 20px;
+    margin-right: 60px;
   }
 }
 
@@ -1313,7 +1326,7 @@ main {
 
   .trends .trends-left {
     width: 100%;
-    padding: 10% 20% 1% 20%;
+    padding: 10% 0%;
   }
 
   .trends .trends-left .btn {
@@ -1345,6 +1358,35 @@ main {
 
   .trends .articals .artical .artical-details .artical-bottom {
     font-size: 9px;
+  }
+
+  .trends .y-img {
+    width: 80%;
+    left: 0;
+  }
+
+  /* .subscribe */
+
+  .subscribe {
+    flex-direction: column;
+    padding: 100px 20px;
+  }
+  .subscribe .circles .small-circle {
+    right: -25px;
+    bottom: 70px;
+    left: unset;
+  }
+  .subscribe p::after {
+    display: none;
+  }
+  .subscribe p {
+    width: 100%;
+    z-index: 2;
+  }
+
+  .subscribe form {
+    margin-top: unset;
+    margin-right: unset;
   }
 }
 
@@ -1500,6 +1542,33 @@ main {
 
   .trends .articals .artical .artical-details .artical-bottom {
     font-size: 12px;
+  }
+
+  .trends .y-img {
+    width: 60%;
+    left: 0;
+  }
+
+  /* .subscribe */
+
+  .subscribe {
+    flex-direction: column;
+    padding: 100px 150px;
+  }
+  .subscribe .circles .small-circle {
+    left: 10%;
+    bottom: 20%;
+    right: unset;
+  }
+
+  .subscribe p {
+    width: 100%;
+    z-index: 2;
+  }
+
+  .subscribe form {
+    margin-top: 20px;
+    margin-right: 60px;
   }
 }
 
@@ -1670,7 +1739,7 @@ main {
   /* trends */
 
   .trends {
-    padding: 10% 5%;
+    padding: 5% 5% 10% 5%;
     flex-direction: row;
   }
 
@@ -1708,6 +1777,24 @@ main {
 
   .trends .articals .artical .artical-details .artical-bottom {
     font-size: 12px;
+  }
+  .trends .y-img {
+    width: 40%;
+    left: 10%;
+  }
+  /* subscribe */
+  .subscribe {
+    flex-direction: row;
+    padding: 100px 200px;
+  }
+
+  .subscribe p {
+    width: 60%;
+    z-index: 2;
+  }
+
+  .subscribe form {
+    margin-top: unset;
   }
 }
 
