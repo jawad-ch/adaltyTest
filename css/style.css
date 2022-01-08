@@ -93,7 +93,7 @@ header .toggle-icon {
 
 body.menuOpen header .toggle-icon {
   color: white;
-  top: 10px;
+  /* top: 10px; */
   position: fixed;
 }
 body.menuOpen header .toggle-icon #menu {
