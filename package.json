@@ -1,0 +1,20 @@
+{
+  "name": "adaltytest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass-watch": "sass --watch scss:dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawad-ch/adaltyTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawad-ch/adaltyTest/issues"
+  },
+  "homepage": "https://github.com/jawad-ch/adaltyTest#readme"
+}

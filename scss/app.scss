@@ -1,0 +1,710 @@
+@use "colors" as clrs;
+@use "mixins" as *;
+
+/* resets*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Display", sans-serif;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  background: transparent;
+}
+
+/* global */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body.open {
+  overflow-y: hidden;
+  & .humberger {
+    & .top,
+    & .middle,
+    & .bottom {
+      background-color: clrs.$white;
+      width: 100%;
+      top: 48%;
+    }
+    & .top {
+      transform: rotate(45deg);
+    }
+
+    & .middle,
+    & .bottom {
+      transform: rotate(-45deg);
+    }
+  }
+  @include for-size(tablet-lg, down) {
+    nav {
+      transform: translateX(0);
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: clrs.$black;
+  font-weight: 600;
+}
+
+body {
+  &.open .toggle-icon {
+    color: white;
+    position: fixed;
+  }
+}
+
+/* header*/
+
+header {
+  //   height: 100px;
+  background: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+
+  & img {
+    margin: 30px 0 0 65px;
+    @include for-size(tablet-lg, down) {
+      margin-left: 50px;
+    }
+  }
+  & nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 30px 65px 0 0;
+
+    & ul {
+      display: flex;
+      & li:not(:last-child) {
+        margin-right: 50px;
+        @include for-size(tablet-lg, down) {
+          margin-right: unset;
+        }
+      }
+      &.top {
+        margin-top: 20px;
+      }
+      &.bottom {
+        margin-top: 45px;
+        & li {
+          font-size: small;
+        }
+      }
+    }
+    /* header media*/
+    @include for-size(tablet-lg, down) {
+      background-color: clrs.$main;
+      padding-top: 0;
+      align-items: flex-end;
+      padding-right: 0;
+      height: 100vh;
+      position: fixed;
+      z-index: 2;
+      right: 0;
+      justify-content: center;
+      overflow-y: scroll;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in-out;
+      width: 30%;
+      & ul {
+        flex-direction: column;
+        width: 100%;
+        & li {
+          // padding-top: 25px;
+          display: flex;
+          justify-content: flex-end;
+          &:hover {
+            background-color: clrs.$light-pink2;
+          }
+          & a {
+            padding: 12.5px 65px 12.5px 0;
+            width: 100%;
+            text-align: right;
+            transition: color, transform 0.6s ease-in-out;
+            color: clrs.$light-grey;
+            &:hover {
+              color: clrs.$main;
+              transform: translateX(-15px);
+            }
+          }
+        }
+        &.bottom {
+          margin-top: unset !important;
+          & li {
+            font-size: large !important;
+          }
+        }
+      }
+    }
+
+    @include for-size(tablet, down) {
+      width: 40%;
+    }
+    @include for-size(phone, down) {
+      width: 50%;
+    }
+    @include for-size(phone-sm, down) {
+      width: 65%;
+    }
+  }
+}
+
+/* toggle menu */
+
+.toggle-menu {
+  position: absolute;
+  right: 45px;
+  top: 30px;
+  cursor: pointer;
+  z-index: 3;
+  display: none;
+  @include for-size(tablet-lg, down) {
+    display: block;
+  }
+  .top,
+  .middle,
+  .bottom {
+    background-color: clrs.$black;
+  }
+  & i {
+    display: flex;
+    justify-content: flex-end;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    & span {
+      position: absolute;
+      height: 4px;
+      width: 75%;
+      background-color: clrs.$black;
+      transition: all 0.35s cubic-bezier(0.26, 0.1, 0.27, 1.55) 0s;
+      &.top {
+        top: 0;
+        left: 0;
+      }
+
+      &.middle {
+        top: 45%;
+      }
+
+      &.bottom {
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+/* main */
+
+section {
+  width: 100%;
+  margin: 50px auto;
+}
+/* hero section */
+section.hero {
+  margin-top: 60px;
+  & .quot {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    & p,
+    & button {
+      margin: 0 20px;
+    }
+
+    & p {
+      font-size: 2.05rem;
+      color: clrs.$black;
+      font-weight: 500;
+      line-height: 3.5rem;
+      width: 40%;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: clrs.$black;
+        // opacity: 0.5;
+        width: 100px;
+        height: 2px;
+        bottom: -20px;
+        left: 0;
+      }
+    }
+
+    & button {
+      margin-top: 15px;
+      padding: 15px 17.5px;
+      border-radius: 4px;
+      height: 100%;
+      width: 160px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      background-color: clrs.$pink;
+      position: relative;
+
+      &:hover {
+        &::before {
+          transform: translate(5px, 5px);
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        transition: transform 0.25s ease-in-out;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: 2px dashed clrs.$pink;
+        left: 0;
+        top: 0;
+      }
+    }
+    // @include for-size(desktop, up) {
+    transform: translateY(150%);
+    opacity: 0;
+    animation: fade-up 1s forwards 2s;
+    // }
+    @include for-size(tablet-lg, down) {
+      & p {
+        width: 50%;
+      }
+    }
+    @include for-size(tablet, down) {
+      & p {
+        width: 60%;
+      }
+    }
+    @include for-size(phone, down) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 30px;
+      animation-delay: 0.5s;
+      & p {
+        width: 90%;
+        font-size: 2.1rem;
+      }
+    }
+    @include for-size(phone-sm, down) {
+      flex-direction: column;
+      & p {
+        width: 100%;
+      }
+    }
+  }
+
+  & .hero-wrapper {
+    margin-top: 60px;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+
+    & .hero-left,
+    & .hero-right {
+      transform: translateY(-10%);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      animation: slide-down 2s forwards 0.5s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px 0 70px 100px;
+      width: 50%;
+      // height: 350px;
+      color: white;
+
+      & :not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      & p {
+        font-weight: 700;
+        font-size: 24px;
+        width: 60%;
+        letter-spacing: 1px;
+        width: 90%;
+      }
+      & .btn {
+        @include btn;
+      }
+    }
+    & .hero-left {
+      background: url(../../img/hero-left.png) no-repeat center / cover,
+        clrs.$main;
+    }
+    & .hero-right {
+      & p {
+        width: 70%;
+      }
+      background: url(../../img/hero-right.png) no-repeat 100% 100% / cover;
+    }
+    // hero-wrapper media
+    @include for-size(tablet-lg, down) {
+      & .hero-right,
+      & .hero-left {
+        padding: 50px 10px 50px 70px;
+      }
+      & .hero-right {
+        & p {
+          width: 100%;
+        }
+      }
+    }
+    @include for-size(tablet, down) {
+      flex-direction: column;
+      & .hero-left,
+      & .hero-right {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// partners section
+
+section.partners {
+  display: flex;
+  // height: 100%;
+  position: relative;
+  padding: 115px 0;
+
+  & .circle {
+    top: 33%;
+    left: -115px;
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: clrs.$dark-cyan;
+
+    &::after {
+      content: "";
+      top: -50%;
+      left: -50%;
+      border-radius: 50%;
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      border: 1.5px solid clrs.$pink;
+    }
+  }
+
+  & .ambitions-wrapper {
+    display: flex;
+    width: 50%;
+
+    & .we {
+      font-size: small;
+      width: 50%;
+      color: clrs.$main;
+      padding-left: 150px;
+      padding-top: 40px;
+    }
+    & .ambitions {
+      font-size: 40px;
+      position: relative;
+      display: flex;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 1.5px;
+        left: 0;
+        bottom: 50%;
+        border-radius: 30px;
+        background-color: clrs.$black;
+      }
+    }
+    // .ambitions-wrapper media
+    @include for-size(tablet-lg, down) {
+      width: 100%;
+      flex-direction: column;
+      & .we {
+        font-size: x-large;
+        padding: 0;
+        margin-bottom: 25px;
+      }
+      & .ambitions {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+        &:after {
+          display: none;
+        }
+      }
+    }
+    @include between-sizes(1024px, 1250px) {
+      & .ambitions {
+        font-size: 35px;
+      }
+      .we {
+        padding-left: 100px;
+      }
+    }
+  }
+
+  & .partners-desc {
+    width: 50%;
+
+    & p {
+      width: 80%;
+      font-size: 1.1rem;
+      line-height: 35px;
+    }
+
+    & .btn {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+      & i {
+        margin: auto;
+        font-size: 20px;
+        line-height: 50px;
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: white;
+        background-color: clrs.$main;
+      }
+    }
+    // partners-desc media
+    @include for-size(tablet-lg, down) {
+      width: 100%;
+      flex-direction: column;
+      & p {
+        width: 100%;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  // section.partners media
+  @include for-size(tablet-lg, down) {
+    flex-direction: column;
+    padding: 115px 200px;
+  }
+  @include for-size(tablet, down) {
+    padding: 115px 100px;
+  }
+  @include for-size(phone, down) {
+    padding: 115px 20px;
+  }
+}
+
+// numbers section
+
+section.numbers {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: clrs.$black;
+  padding: 2.5rem;
+
+  & p {
+    color: white;
+    font-size: 2rem;
+    // width: 164px;
+  }
+
+  & .content {
+    display: flex;
+
+    & .shapes {
+      width: 50%;
+      position: relative;
+      overflow: hidden;
+      & .circle1 {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: clrs.$dark-cyan;
+        position: absolute;
+        top: 10%;
+        left: 20%;
+      }
+
+      & .circle2 {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: clrs.$main;
+        position: absolute;
+        bottom: 10%;
+        left: 15%;
+      }
+
+      & .circle3 {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background-color: clrs.$main;
+        position: absolute;
+        margin: auto;
+        bottom: 20%;
+        right: 20%;
+        animation-name: spining;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        &::before {
+          content: "";
+          margin: auto;
+          width: 270px;
+          height: 270px;
+          border-radius: 50%;
+          border: 1.5px solid clrs.$main;
+          position: absolute;
+          top: -100%;
+          left: -100%;
+        }
+        &::after {
+          content: "";
+          margin: auto;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: clrs.$dark-cyan;
+          position: absolute;
+          top: 0;
+          left: -105%;
+        }
+      }
+      & .dotes {
+        color: white;
+        position: absolute;
+        bottom: 2%;
+        left: 10%;
+        & i {
+          font-size: xxx-large;
+        }
+      }
+      @include for-size(tablet-lg, down) {
+        display: none;
+      }
+    }
+
+    & .numbers-details {
+      width: 50%;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem 2rem;
+      & .box {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: transparent;
+          bottom: -10%;
+          right: 0;
+          left: 0;
+          @include for-size(tablet-lg, down) {
+            background-color: clrs.$brown;
+          }
+        }
+        &:not(:nth-child(3), :nth-child(4))::before {
+          background-color: clrs.$brown;
+        }
+        @include for-size(tablet-lg, up) {
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+              & .num {
+                animation-delay: #{$i - 0.5}s;
+              }
+            }
+          }
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+              & .num-detail {
+                animation-delay: #{$i - 0.5}s;
+              }
+            }
+          }
+        }
+        & .num {
+          display: inline-flex;
+          font-size: 6rem;
+          cursor: pointer;
+          transition: color 0.2s ease-in-out;
+          color: white;
+          -webkit-text-stroke: none;
+          &:hover {
+            color: transparent;
+            -webkit-text-stroke: 1px white;
+          }
+        }
+
+        & .num-detail {
+          display: flex;
+          flex-direction: column;
+          & .type {
+            color: clrs.$main;
+            margin: 1rem 0;
+            font-size: 20px;
+          }
+          & .desc {
+            line-height: 25px;
+            font-size: 16px;
+            letter-spacing: 1.5px;
+            color: clrs.$white;
+          }
+        }
+
+        &:nth-child(2) .num,
+        &:nth-child(3) .num {
+          color: transparent;
+          -webkit-text-stroke: 1px white;
+          &:hover {
+            color: white;
+            -webkit-text-stroke: none;
+          }
+        }
+      }
+      @include for-size(tablet-lg, down) {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include for-size(tablet, down) {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      @include for-size(phone, down) {
+        grid-template-columns: repeat(1, 1fr) !important;
+      }
+    }
+  }
+}
